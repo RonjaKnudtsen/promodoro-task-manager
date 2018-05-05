@@ -5,7 +5,7 @@ import {Icon} from "react-font-awesome-5";
 const PromodoroListItem = ({promodoro, breakInterval}) => {
 
     return(
-        <div className="promodoro-list-item">
+        <div className="promodoro-list-item" key={promodoro.startTime}>
             <p className="time">{moment(promodoro.startTime).calendar()}</p>
             <p className="description">
                 <Icon.DotCircle color={promodoro.break ? "#d8cd37" : "#36a266"} style={{padding: '0 5px'}}/> 

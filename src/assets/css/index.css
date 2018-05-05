@@ -167,3 +167,10 @@ h1.timer-countdown.paused {
   color: #000;
   font-weight: 300;
 }
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  transform: translate(-50%);
+}

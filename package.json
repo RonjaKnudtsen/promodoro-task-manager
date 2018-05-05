@@ -1,9 +1,10 @@
 {
   "name": "promodoro-task-manager",
-  "homepage": "https://github.com/RonjaKnudtsen/promodoro-task-manager",
+  "homepage": "https://ronjaknudtsen.github.io/promodoro-task-manager/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "history": "^4.7.2",
     "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -19,10 +20,11 @@
     "less-watch-compiler": "^1.11.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build npm run build-css",
     "deploy": "gh-pages -d build",
     "build-css": "less-watch-compiler --run-once --main-file=index.less src/assets/less src/assets/css",
     "watch-css": "npm run build-css && less-watch-compiler --main-file=index.less src/assets/less src/assets/css",
+    "cleanup": "rm -rf node_modules/gh-pages/.cache",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

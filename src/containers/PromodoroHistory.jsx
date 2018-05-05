@@ -15,7 +15,7 @@ class PromodoroHistory extends Component{
                 <div className="promodoro-list" style={{marginTop: 100}} >
                     <h4 style={{marginBottom: 5}}>Promodoro history </h4>
                     {promodoroList.map(promodoro => (
-                    <PromodoroListItem promodoro={promodoro} breakInterval={task.breakInterval} />
+                    <PromodoroListItem key={promodoro.startTime} promodoro={promodoro} breakInterval={task.breakInterval} />
                     ))}
                     
                 </div>

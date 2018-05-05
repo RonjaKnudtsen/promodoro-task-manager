@@ -6,11 +6,9 @@ class Countdown extends Component{
     constructor(props){
         super(props);
         let activePromodoro = props.task.promodoros.filter(x => x.activeTask);
-        console.log("ACTIVE PROMODORO:", activePromodoro);
 
         if(activePromodoro.length === 0){
             activePromodoro = this.initializeFirstPromodoro();
-            console.log("ACTIVE PROMODORO:", activePromodoro);
         } else {
             activePromodoro = activePromodoro[0];
         }
@@ -41,9 +39,7 @@ class Countdown extends Component{
         return this.createNewPromodoro(25, 0, false, true);
     }
     createNewPromodoro = (minutesLeft, secondsLeft, onBreak, activeTask) => {
-        const {promodoros, key} = this.props.task;
-
-        const activePromodoro = promodoros.filter(x => x.active)[0];
+        const {key} = this.props.task;
         const promodoro = {
             minutesLeft, secondsLeft, break: onBreak, activeTask
         }
@@ -52,9 +48,8 @@ class Countdown extends Component{
     }
     //Update prodoro in global state.
     updatePromodoroTimer = (minutesLeft, secondsLeft, onBreak, activeTask) => {
-        const {promodoros, key} = this.props.task;
+        const {key} = this.props.task;
 
-        const activePromodoro = promodoros.filter(x => x.active)[0];
         this.props.updateActivePromodoro(key, {
             minutesLeft, secondsLeft, break: onBreak, activeTask
         })
@@ -77,13 +72,11 @@ class Countdown extends Component{
     }
 
     playSound = () => {
-        console.log("PLAY SOUND");
         const sound = new Audio(alarm);
         sound.play();
     }
 
     time = () => {
-        console.log("TIME");
         this.timer = setInterval(() => {
             const {minutes, seconds, onBreak} = this.state;
             let m = minutes;
@@ -135,7 +128,6 @@ class Countdown extends Component{
     }
 
     render(){
-        const {task} = this.props;
         const {seconds, minutes, onBreak, timerStopped} = this.state;
 
         let message = "";

@@ -42,7 +42,7 @@ class TaskForm extends Component{
             return !this.validate(input[x].value, x);
         })
         if(invalid.length > 0){
-            console.log("Fix errors before submitting");
+            console.warn("Fix errors before submitting");
         } else {
             //Simple generation of key, removing special characters, spaces and converts to lowercase
             let genKey = input.taskName.value
@@ -50,7 +50,7 @@ class TaskForm extends Component{
             .replace(/\s/g, '')
             .replace(/[^\w\s]/gi, '');
 
-            const breakInterval = parseInt(input.breakInterval.value);
+            const breakInterval = parseInt(input.breakInterval.value, 2);
             
             //Do redux action to create a global task.
             this.props.taskActions.CreateTask({key: genKey, name: input.taskName.value, breakInterval, finished: false});

@@ -23,6 +23,8 @@ class TimerPage extends Component{
         const {taskid} = this.props.match.params;
         const {tasks} = this.props;
 
+        
+
         //if no tasks exist dont loop and filter.
         if(tasks.allTasks.length > 0 ){
             const task = tasks.tasks[taskid];

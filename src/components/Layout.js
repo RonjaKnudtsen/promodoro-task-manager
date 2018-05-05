@@ -12,10 +12,14 @@ class Layout extends Component{
         return(
             <div className="layout">
                 <div className="top-nav">
-                    <div className="menu-item" onClick={() => this.goBack()}><Icon.AngleLeft color="#238569"/> Back</div>
-                </div>
+                {this.props.history.location.pathname === "/" ? <div /> : <div className="menu-item" onClick={() => this.goBack()}><Icon.AngleLeft color="#238569"/> Back</div>
+}
+                                    </div>
                 <div className="main">
                     <MainRoutes />
+                </div>
+                <div className="footer">
+                    Created by Ronja Knudtsen with React
                 </div>
             </div>  
         );

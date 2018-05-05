@@ -4,23 +4,11 @@ import TaskCard from '../components/TaskCard';
 import { withRouter } from 'react-router-dom';
 
 class TaskList extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-
-        }
-    }
-
-    componentDidMount(){
-        console.log(this.props);
-    }
     render(){
         const {tasks} = this.props;
-
         const finishedTasks = tasks.allTasks.filter(x => tasks.tasks[x].finished);
         const unfinished = tasks.allTasks.filter(x => !tasks.tasks[x].finished);
-        console.log("finishedTasks", finishedTasks);
-        console.log("unfinished", unfinished);
+        
         return(
             <div>
                 <div className="task-list unfinished">

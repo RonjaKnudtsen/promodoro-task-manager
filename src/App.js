@@ -9,11 +9,8 @@ class App extends Component {
     moment.locale('en-gb');
   }
   render() {
-    console.log(this.props);
-
     return (
-      
-      <BrowserRouter>
+      <BrowserRouter basename={'/promodoro-task-manager'}>
           <div className="App">
               <Layout />
           </div>
