@@ -4,7 +4,7 @@
 This is a promodoro task manager created as a job test for Vibbio.
 
 ## How to?
-A promodoro timer gives you a set of interval for work sprints. Designed to enhance work effectivity. After 25 minutes of work you are given a break to write down thoughts, stretch, get some coffe or do other stuff so you can ready your mind to focus intensly i another 25 minutes. 
+A promodoro timer gives you a set of interval for work sprints. Designed to enhance work effectivity. After 25 minutes of work you are given a break to write down thoughts, stretch, get some coffe or do other stuff so you can ready your mind to focus intensly for the next 25 minutes. 
 
 ## Tools and libraries
 This is a react app bootstrapped with create react app
