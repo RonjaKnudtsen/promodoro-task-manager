@@ -137,10 +137,11 @@ class TaskForm extends Component{
                         onBlur={this.onBlur.bind(this)}
                         size={30}
                         name="taskName"
+                        id="taskName"
                         className={taskName.value.length <= 0 && !taskName.touched ? "" : "floating"}
                     />
                     <label>Task Name</label>
-                    <p className="error-message">{!taskName.valid && taskName.touched ? taskName.errorMessage : ""}</p>
+                    {!taskName.valid && taskName.touched ? <p className="error-message"> {taskName.errorMessage} </p> : ""}
                 </div>
                 <div className={`input-box  ${!breakInterval.valid && breakInterval.touched ? 'error-input' : ''}`}>
                     <input 
@@ -148,13 +149,14 @@ class TaskForm extends Component{
                         onChange={this.onChange.bind(this)} 
                         onBlur={this.onBlur.bind(this)}
                         name="breakInterval" size={1} 
+                        id="breakInterval"
                         className={breakInterval.value >= 0 ? "floating" : ""}
                     />
                     <label>Break interval</label>
                     minutes
 
                     {/* If the input field has not been touched, dont show anything. If it is tocuhed and is invalid show "not valid"*/}
-                    <p className="error-message">{!breakInterval.valid && breakInterval.touched ? breakInterval.errorMessage : ""}</p>
+                    {!breakInterval.valid && breakInterval.touched ? <p className="error-message"> {breakInterval.errorMessage} </p> : ""}
                 </div>
                 <Button color="green" onClick={() => this.submit()} label="Start"/>
                 
