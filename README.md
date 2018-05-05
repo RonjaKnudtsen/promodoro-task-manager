@@ -23,6 +23,6 @@ A promodoro timer gives you a set of interval for work sprints. Designed to enha
 To constantly watch css run npm run watch-css
 
 ## Styles
-* It uses custom css(less)
+* The app uses custom css (less)
 * Icons are from FontAwesome
 * Fonts used are 'Roboto' and 'Open Sans Condensed'.
