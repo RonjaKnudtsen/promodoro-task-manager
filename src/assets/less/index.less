@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Roboto:500');
+
+// Colors
+@green: #36a266;
+@medium-dark-green: #319964;
+@dark-green: #238569;
+@yellow: #d8cd37;
+@medium-dark-yellow: #bab02b;
+@dark-yellow: #adb219;
+@grey: #888888;
+@dark-grey: #686868;
+@orange: #fd8922;
+
+//Fonts
+@heading-font: 'Roboto', sans-serif;
+@paragraph-font: 'Open Sans Condensed', sans-serif;
+@box-shadow-pos:  7px 5px 0px 2px;
+
+body{
+    background-color: #eaeaea;
+    color: #000;
+    font-family: @paragraph-font;
+    font-size: 18px;
+}
+
+h1, h2{
+    font-weight: bold;
+    font-family: @heading-font;
+}
+
+h3, h4, h5, p{
+    font-weight: 200;
+    font-family: @paragraph-font;
+}
+
+a{
+    text-decoration: none;
+    color: @grey;
+}
+
+
+h1.timer-countdown{
+    font-size: 100px;
+    
+    &.on-break{
+        color: @yellow;
+    }
+    &.paused{
+        color: @orange;
+    }
+
+}
+
+.page-title{
+    color: @green;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu-item{
+    cursor: pointer;
+    color: @green;
+    padding-left: 5px;
+    font-size:18px;
+    font-family: @heading-font;
+}
+
+//Buttons
+.ui-button{
+    display: inline-block;
+    padding: 20px 27px 15px ; // top right bottom left
+    margin: 15px 15px;
+    background-color: @grey;
+    border-radius: 17px;
+    font-family: @heading-font;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: @box-shadow-pos rgba(0,0,0,0.75);
+    cursor: pointer;
+    font-size: 24px;
+
+    &.green{
+        background-color: @green;
+        box-shadow: @box-shadow-pos @dark-green;
+        &:active{
+            background-color: @medium-dark-green;
+        }
+    }
+
+    &.yellow{
+        background-color: @yellow;
+        box-shadow: @box-shadow-pos @dark-yellow;
+        &:active{
+            background-color: @medium-dark-yellow;
+        }
+    }
+
+    &.medium{
+        font-size: 18px;
+        padding: 15px 20px 12px ;
+    }
+}
+
+.input-box{
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-box input{
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    outline: none;
+    border-bottom: solid 1px @grey;
+    padding: 5px 0;
+    font-size: 18px;
+    background-color: transparent;
+    font-family: @paragraph-font;
+    &:active{
+        outline: none;
+        color: @green;
+        border-color: @green;
+    }
+}
+
+.input-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    font-family: @paragraph-font;
+    transition: 0.2s ease-out;
+    color: @grey;
+}
+
+.input-box input:focus ~ label, .input-box input.floating ~ label{
+    top: -20px;
+    font-size: 14px;
+}
+
+.main{
+    margin: 0 auto;
+    width: 350px //50%;
+}
+
+.error-message{
+    margin: 5px 0;
+    color: red;
+    font-size: 14px;
+}
+.input-box.error-input{
+    input{
+        color: red;
+        border-color: red;
+    }
+}
+
+
+.task-list-item{
+    background-color: #ffffffc9;
+    border-radius: 10px;
+    padding: 20px;
+    color: @grey;
+    margin: 20px 0;
+    cursor: pointer;
+
+    h3, p{
+        margin: 0
+    }
+    h3{
+        color: @dark-grey;
+    }
+    
+}
+
+
+.promodoro-list{
+    
+    color: @grey;
+    text-align: left;
+    p{
+        margin: 0;
+        &.time{
+            float:right;
+        }
+        &.description{
+            color: #000;
+            font-weight: 300;
+        }
+    }
+}
+
